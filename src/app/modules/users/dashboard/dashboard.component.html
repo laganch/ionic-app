@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showModal()" [ariaDescription]="true"><ion-icon name="add"></ion-icon></ion-fab-button>
+  </ion-fab>
+  
+<div class="container-scroller" style="position: absolute;">
+
+  <div class="container-fluid page-body-wrapper">
+   <!-- partial -->
+   <div class="main-panel">
+    <div class="content-wrapper">
+     <h5 class="title">Welcome back {{firstName}}!!</h5>
+     <div  class="row">
+      <div class="container">
+       <div class="row">
+        <div class="col-lg-3 col-sm-6">
+         <div class="card-box bg-blue">
+          <div class="inner">
+           <h3> 1209 </h3>
+           <p> Total Emblem Sold</p>
+          </div>
+          <div class="icon">
+           <i class=" fa fa-certificate" aria-hidden="true"></i>
+          </div>
+          <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+         <div class="card-box bg-green">
+          <div class="inner">
+           <h3> {{185358 | currency:"	&#8358;"  || 'N/A' }} </h3>
+           <p> Total Sales Amount</p>
+          </div>
+          <div class="icon">
+           <i class="fa fa-tasks" aria-hidden="true"></i>
+          </div>
+          <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+         <div class="card-box bg-orange">
+          <div class="inner">
+           <h3> 5464 </h3>
+           <p>Total Stock </p>
+          </div>
+          <div class="icon">
+           <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+          </div>
+          <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+        </div>
+       </div>
+
+      </div>
+     </div>
+
+    </div>
+  
+
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+     <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Anambra State Government 2023</span>
+      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Powered by: <a >Oasis Management Company</a> </span>
+     </div>
+    </footer>
+   </div>
+   <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+ </div>
+</ion-content>

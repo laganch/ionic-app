@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sell Emblem</ion-title>
+    <ion-button slot="end" (click)="dismisModal()" color="danger" size="small"><ion-icon name="close"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)='sellEmblem()'>
+    <ion-item>
+      <ion-label position="floating">Select Emblem Type</ion-label>
+      <ion-select formControlName="type">
+        <ion-select-option>TRICYCLE</ion-select-option>
+        <ion-select-option>BUSES</ion-select-option>
+        <ion-select-option>PICKUP</ion-select-option>
+        <ion-select-option>TRUCKS_LORRIES</ion-select-option>
+        <ion-select-option>MOTORCYCLES</ion-select-option>
+        <ion-select-option>TAXI</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Enter Emblem Code</ion-label>
+      <ion-input formControlName="code" type="text" placeholder="Enter Emblem number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Enter Tcode/Ucode</ion-label>
+      <ion-input formControlName="tcode" type="text" placeholder="Enter TCode/UCode"></ion-input>
+    </ion-item>
+      <ion-button type="submit" class="ion-margin-top" expand="block" [disabled]="form.invalid" >Sell Emblem</ion-button>
+  </form>
+  <ion-alert
+    [isOpen]="isAlertOpen"
+    header="Success"
+    message={{errMessage}}
+    [buttons]="alertButtons"
+    (didDismiss)="setOpen(false)">
+  </ion-alert>
+
+  <ion-alert
+  [isOpen]="isErrorOpen"
+  header="Danger"
+  message={{errMessage}}
+  [buttons]="alertButtons"
+  (didDismiss)="setError(false)">
+</ion-alert>
+
+</ion-content>
